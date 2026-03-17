@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Share+Tech+Mono&display=swap');
+
+@theme {
+  /* Define custom animations for Tailwind v4 */
+  --animate-shake: shake 0.2s infinite;
+  --animate-fall: fall linear infinite;
+  --animate-spin-slow: spin 4s linear infinite;
+
+  /* Keyframes must be defined this way in v4's @theme */
+  @keyframes shake {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    25% {
+      transform: translate(4px, 4px);
+    }
+
+    50% {
+      transform: translate(-4px, -4px);
+    }
+
+    75% {
+      transform: translate(4px, -4px);
+    }
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+/* Base Body Styles */
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #0a0c10;
+}
+
+/* Custom Cyberpunk Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f1115;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffe7;
+  border-radius: 4px;
+}
+
+/* 1. CLEAN TITLE GLITCH */
+.cyber-glitch-title {
+  position: relative;
+  animation: glitch-shadow-main 3s infinite linear;
+}
+
+@keyframes glitch-shadow-main {
+  0% {
+    text-shadow: -2px 0 #FC5185, 2px 0 #00ffe7;
+  }
+
+  20% {
+    text-shadow: none;
+  }
+
+  40% {
+    text-shadow: -1px 0 #FC5185, 1px 0 #00ffe7;
+  }
+
+  60% {
+    text-shadow: none;
+  }
+
+  80% {
+    text-shadow: 2px 0 #FC5185, -2px 0 #00ffe7;
+  }
+
+  100% {
+    text-shadow: none;
+  }
+}
+
+/* 2. PREMIUM GLOWING BORDER */
+.animated-border {
+  position: relative;
+  background: #0a0c10;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 1.5rem;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #00ffe7, transparent, #FC5185, transparent, #00ffe7);
+  background-size: 300% 300%;
+  animation: border-shimmer 8s ease infinite;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.animated-border:hover::before {
+  opacity: 1;
+}
+
+@keyframes border-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
