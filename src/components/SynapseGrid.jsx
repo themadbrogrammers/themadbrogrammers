@@ -5,26 +5,147 @@ import { BookOpen, Lock, X, Terminal, ChevronRight } from 'lucide-react';
 // Added 'content' to simulate a real markdown/blog post payload
 const articles = [
   {
-    id: "LOG-01", title: "Master Async/Await", category: "SYS.JS", readTime: "05m", size: "col-span-1 md:col-span-2 row-span-2",
-    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-    content: "The JavaScript event loop is a chaotic vortex. Most developers just throw 'await' at a Promise and hope the thread doesn't lock up. But in this lab, we engineer precision.\n\nTo truly master asynchronous execution, you must understand the microtask queue. When the call stack clears, the engine doesn't just grab the next macro task; it violently consumes every pending microtask first.\n\n> \"A synchronous mind cannot comprehend an asynchronous universe.\"\n\n```javascript\n// Typical amateur approach\nawait fetchUserData();\nawait fetchLabData();\n\n// The Mad Brogrammer approach\nawait Promise.all([fetchUserData(), fetchLabData()]);\n```\n\nStop bottlenecking your I/O operations. Parallelize your chaos."
+    id: "LOG-AX01",
+    title: "Tutorials Are a Controlled Lie",
+    category: "SYS.MIND",
+    readTime: "04m",
+    size: "col-span-1 md:col-span-2 row-span-2",
+    img: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop",
+    content: "Every tutorial you’ve consumed was engineered to succeed.\n\nNo edge cases. No failure states. No chaos.\n\nBut real systems don’t behave like that. They degrade, they conflict, they break in ways no documentation predicts.\n\n> \"If your code only works in ideal conditions, it doesn’t work.\"\n\nThe real skill isn’t writing code that runs.\nIt’s writing code that survives.\n\nThat’s where engineering begins."
   },
   {
-    id: "LOG-02", title: "When AI Reviews Your PR", category: "SYS.AI", readTime: "08m", size: "col-span-1 md:col-span-2", bg: "bg-gradient-to-br from-[#0091ff]/20 to-[#0a0c10]",
-    content: "We plugged our codebase into a massive LLM to see what would happen. It didn't just find bugs; it judged our architecture.\n\nThe AI pointed out that our state management was 'unnecessarily convoluted' and suggested a refactor that cut our bundle size by 14%. It's terrifying, humbling, and incredibly efficient.\n\nThe future of code review isn't human. It's an unforgiving, hyper-logical neural net that never sleeps."
+    id: "LOG-AX02",
+    title: "UI Is Not Decoration",
+    category: "SYS.DESIGN",
+    readTime: "05m",
+    size: "col-span-1 md:col-span-2",
+    bg: "bg-gradient-to-br from-[#00ffe7]/20 to-[#0a0c10]",
+    content: "Most developers treat UI as the final layer.\n\nThat’s why most products feel dead.\n\nInterface is not decoration. It is behavior.\n\nEvery animation communicates intent.\nEvery delay creates perception.\nEvery transition teaches the user how the system thinks.\n\n> \"A good UI doesn’t look good. It feels inevitable.\"\n\nIf your interface is replaceable, your product is forgettable."
   },
   {
-    id: "LOG-03", title: "Becoming a Calm Dev", category: "SYS.MIND", readTime: "04m", size: "col-span-1 row-span-2", bg: "bg-gradient-to-br from-[#FC5185]/20 to-[#0a0c10]",
-    content: "Servers will crash. Databases will corrupt. PMs will change the requirements a day before launch.\n\nPanic is a memory leak in the human brain. The calm developer doesn't react; they observe. They read the stack trace like a detective, not a victim.\n\nBreathe in. Console.log. Breathe out."
+    id: "LOG-AX03",
+    title: "Calm Is a Competitive Advantage",
+    category: "SYS.MIND",
+    readTime: "03m",
+    size: "col-span-1 row-span-2",
+    bg: "bg-gradient-to-br from-[#FC5185]/20 to-[#0a0c10]",
+    content: "Most developers panic when systems fail.\n\nLogs flood. Errors spike. Deadlines collapse.\n\nThe average reaction is speed.\nThe correct reaction is stillness.\n\n> \"Panic is a debugging anti-pattern.\"\n\nCalm engineers see patterns others miss.\n\nThey don’t fight the system.\nThey read it."
   },
   {
-    id: "LOG-04", title: "Pandas for Big Data", category: "SYS.DATA", readTime: "12m", size: "col-span-1", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-    content: "Loading 10 million rows into memory? Good luck with that standard Python array. \n\nPandas is the heavy machinery of data manipulation. Vectorized operations bypass the slow Python loops, dropping down into raw, unadulterated C code execution.\n\nMaster the DataFrame, and you command the data."
+    id: "LOG-AX04",
+    title: "Automation Replaces Discipline",
+    category: "SYS.LOGIC",
+    readTime: "06m",
+    size: "col-span-1",
+    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop",
+    content: "If you’re doing something repeatedly, you’re already wrong.\n\nHumans are inconsistent.\nMachines are not.\n\nWe don’t rely on discipline.\nWe build systems that remove the need for it.\n\n> \"The best workflow is the one you don’t have to think about.\"\n\nIf it can be automated, it should be eliminated from human responsibility."
   },
   {
-    id: "LOG-05", title: "The Next GPT Engine", category: "SYS.AI", readTime: "06m", size: "col-span-1 md:col-span-2", bg: "bg-gradient-to-br from-[#00ffe7]/20 to-[#0a0c10]",
-    content: "Context windows are expanding. Latency is dropping. The next generation of LLMs aren't just autocomplete on steroids; they are reasoning engines.\n\nWe are shifting from 'prompt engineering' to 'agent orchestration'. If your app isn't natively interacting with an intelligence layer by next year, it belongs in a museum."
+    id: "LOG-AX05",
+    title: "Most Apps Shouldn’t Exist",
+    category: "SYS.REALITY",
+    readTime: "05m",
+    size: "col-span-1 md:col-span-2",
+    bg: "bg-gradient-to-br from-[#FC5185]/20 to-[#0a0c10]",
+    content: "The internet is flooded with unnecessary software.\n\nClones. Variations. Slightly different dashboards solving identical problems.\n\nMost apps are built to exist.\nVery few are built to matter.\n\n> \"If your product disappears tomorrow and nothing breaks, it was never important.\"\n\nBuild things that remove friction.\nNot things that add to the noise."
   },
+  {
+    id: "LOG-AX06",
+    title: "We Don’t Build Features",
+    category: "SYS.CORE",
+    readTime: "04m",
+    size: "col-span-1",
+    bg: "bg-gradient-to-br from-[#00ffe7]/20 to-[#0a0c10]",
+    content: "Features are surface-level thinking.\n\nAnyone can add buttons.\nAnyone can stack functionality.\n\nWe build behavior.\n\nSystems that react.\nInterfaces that guide.\nLogic that adapts.\n\n> \"A feature solves a task. A system reshapes how the task exists.\"\n\nThat’s the difference between shipping code and engineering impact."
+  },
+  {
+    id: "LOG-NULL",
+    title: "REDACTED ENTRY",
+    category: "SYS.UNKNOWN",
+    readTime: "??",
+    locked: true,
+    content: "ACCESS DENIED"
+  },
+  {
+    id: "LOG-NX01",
+    title: "Software That Watches Back",
+    category: "SYS.AI",
+    readTime: "06m",
+    size: "col-span-1 md:col-span-2",
+    content: "We’ve built software that users interact with.\n\nThat’s primitive.\n\nThe next layer is software that observes behavior and adapts silently.\n\nInterfaces that rearrange themselves based on hesitation.\nSystems that detect confusion before input is completed.\n\n> \"The best interface responds before the user realizes they need help.\"\n\nWe are not building tools anymore.\nWe are building entities that learn presence."
+  },
+  {
+    id: "LOG-NX02",
+    title: "Latency Is Psychological",
+    category: "SYS.DESIGN",
+    readTime: "04m",
+    size: "col-span-1",
+    content: "Two systems. Same speed.\n\nOne feels instant.\nThe other feels slow.\n\nWhy?\n\nBecause perception is engineered.\n\nMicro-animations.\nLoading illusions.\nResponse anticipation.\n\n> \"Speed is not measured in milliseconds. It is measured in trust.\"\n\nIf your system feels slow, it is poorly designed—regardless of benchmarks."
+  },
+  {
+    id: "LOG-NX03",
+    title: "Delete Half Your Code",
+    category: "SYS.CORE",
+    readTime: "05m",
+    size: "col-span-1 row-span-2",
+    content: "Most codebases are bloated.\n\nNot because of complexity—\nbut because of hesitation.\n\nRedundant abstractions.\nDefensive layers.\nUnnecessary flexibility.\n\n> \"Every line of code is a liability until proven essential.\"\n\nThe strongest systems are not built by adding more.\nThey are built by removing everything that doesn’t break them."
+  },
+  {
+    id: "LOG-NX04",
+    title: "The Interface That Teaches Itself",
+    category: "SYS.FUTURE",
+    readTime: "07m",
+    size: "col-span-1 md:col-span-2",
+    content: "Documentation is a failure.\n\nIf users need instructions, your system has already lost.\n\nImagine an interface that evolves its own onboarding.\n\nTracking confusion.\nInjecting guidance only when needed.\nDisappearing when mastery is detected.\n\n> \"The best tutorial is the one that never exists.\"\n\nSelf-teaching systems will replace static UX."
+  },
+  {
+    id: "LOG-NX05",
+    title: "Your App Is a Habit Machine",
+    category: "SYS.MIND",
+    readTime: "04m",
+    size: "col-span-1",
+    content: "Every app trains behavior.\n\nWhether intentional or not.\n\nScroll loops.\nNotification triggers.\nReward cycles.\n\n> \"You are not building features. You are programming habits.\"\n\nThe question is not *what your app does.*\n\nThe question is:\n\nWhat does it make people become?"
+  },
+  {
+    id: "LOG-NX06",
+    title: "Systems That Refuse Input",
+    category: "SYS.LOGIC",
+    readTime: "05m",
+    size: "col-span-1",
+    content: "We assume systems should accept user input.\n\nWhy?\n\nWhat if the system rejects bad decisions in real time?\n\nPrevents invalid actions.\nBlocks self-destructive flows.\n\n> \"Good systems don’t obey. They protect.\"\n\nThe future is not user control.\n\nIt is guided constraint."
+  },
+  {
+    id: "LOG-NX07",
+    title: "Invisible Complexity",
+    category: "SYS.ARCH",
+    readTime: "06m",
+    size: "col-span-1 row-span-2",
+    content: "Great systems hide their depth.\n\nThe user sees simplicity.\nUnderneath is controlled chaos.\n\nDistributed logic.\nFallback layers.\nPredictive state.\n\n> \"Complexity should exist. Just not where the user can see it.\"\n\nIf your system feels complex, you exposed it incorrectly."
+  },
+  {
+    id: "LOG-NX08",
+    title: "The Death of Static Apps",
+    category: "SYS.FUTURE",
+    readTime: "05m",
+    size: "col-span-1 md:col-span-2",
+    content: "Static apps are already obsolete.\n\nFixed layouts.\nFixed flows.\nFixed logic.\n\nEverything predetermined.\n\n> \"A static app is a fossil pretending to be alive.\"\n\nThe next generation:\n\nApps that mutate.\nInterfaces that evolve.\nLogic that rewrites itself based on usage.\n\nIf your app behaves the same for every user, it’s already behind."
+  },
+  {
+    id: "LOG-NX09",
+    title: "You Don’t Need Motivation",
+    category: "SYS.MIND",
+    readTime: "03m",
+    size: "col-span-1",
+    content: "Motivation is unreliable.\n\nIt spikes. It fades.\n\nSystems don’t.\n\n> \"Consistency is not a personality trait. It is an engineered environment.\"\n\nIf your workflow depends on willpower, it will fail.\n\nBuild systems that make progress inevitable."
+  },
+  {
+    id: "LOG-NX10",
+    title: "Build Something That Shouldn’t Exist",
+    category: "SYS.CORE",
+    readTime: "06m",
+    size: "col-span-1 md:col-span-2",
+    content: "Most developers build what is expected.\n\nSafe ideas.\nPredictable patterns.\nApproved solutions.\n\nThat’s why most products are forgettable.\n\n> \"If it feels comfortable to build, it’s probably already been built.\"\n\nThe only things worth creating are the ones that feel slightly impossible.\n\nThat tension?\n\nThat’s where new systems come from."
+  }
 ];
 
 const filters = ["ALL_LOGS", "SYS.JS", "SYS.AI", "SYS.DATA", "SYS.MIND"];
@@ -142,8 +263,8 @@ export default function SynapseGrid() {
             <button
               key={f} onClick={() => setActiveFilter(f)}
               className={`px-4 py-2 font-mono text-[10px] tracking-widest uppercase transition-all border ${activeFilter === f
-                  ? 'bg-[#00ffe7] text-[#0a0c10] border-[#00ffe7] font-bold shadow-[0_0_15px_rgba(0,255,231,0.4)]'
-                  : 'bg-transparent text-gray-500 border-white/10 hover:border-[#00ffe7]/50 hover:text-[#00ffe7]'
+                ? 'bg-[#00ffe7] text-[#0a0c10] border-[#00ffe7] font-bold shadow-[0_0_15px_rgba(0,255,231,0.4)]'
+                : 'bg-transparent text-gray-500 border-white/10 hover:border-[#00ffe7]/50 hover:text-[#00ffe7]'
                 }`}
             >
               [{f}]

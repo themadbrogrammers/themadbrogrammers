@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 
 // Replace 'videoId' with your actual YouTube video IDs
 const topVideos = [
-  { id: "FREQ-01", title: "Building a Neural Net in Pure JS", videoId: "YOUR_VID_1", time: "14:20", status: "LIVE" },
-  { id: "FREQ-02", title: "Real-Time WebSockets Architecture", videoId: "YOUR_VID_2", time: "08:45", status: "DECRYPTED" },
+  { id: "FREQ-01", title: "BunkMate", videoId: "7LD62NS89ig?si=Oma93fr6PdL8voQW", time: "14:20", status: "LIVE" },
+  { id: "FREQ-02", title: "BAGPACK", videoId: "vLQ7SyBaYTw?si=vyJeGGm7fd5xSrRR", time: "08:45", status: "DECRYPTED" },
   { id: "FREQ-03", title: "Python Data Structures Explained", videoId: "YOUR_VID_3", time: "22:10", status: "DECRYPTED" },
   { id: "FREQ-04", title: "Deploying the Mainframe (DevOps)", videoId: "YOUR_VID_4", time: "11:05", status: "ARCHIVED" },
   { id: "FREQ-05", title: "Hacking CSS for Cyberpunk UI", videoId: "YOUR_VID_5", time: "16:30", status: "ARCHIVED" },
@@ -16,12 +16,18 @@ export default function FeaturedVideo() {
   const [activeVideo, setActiveVideo] = useState(topVideos[0]);
   const [isSwitching, setIsSwitching] = useState(false);
 
-  // Fake system time generator
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      setTime(`${now.getUTCHours()}:${now.getUTCMinutes()}:${now.getUTCSeconds()} UTC // ${Math.floor(Math.random() * 999)}MS`);
+
+      const nyTime = now.toLocaleTimeString("en-US", {
+        timeZone: "America/New_York",
+        hour12: false, // set true if you want AM/PM
+      });
+
+      setTime(`${nyTime} // ${Math.floor(Math.random() * 999)}MS`);
     };
+
     const timer = setInterval(updateTime, 1000);
     return () => clearInterval(timer);
   }, []);
@@ -140,8 +146,8 @@ export default function FeaturedVideo() {
                   key={video.id}
                   onClick={() => handleVideoSwitch(video)}
                   className={`relative flex flex-col p-4 text-left transition-all duration-300 border ${isActive
-                      ? 'bg-[#00ffe7]/10 border-[#00ffe7] shadow-[0_0_15px_rgba(0,255,231,0.2)]'
-                      : 'bg-[#050608] border-white/5 hover:border-[#FC5185]/50 hover:bg-white/5'
+                    ? 'bg-[#00ffe7]/10 border-[#00ffe7] shadow-[0_0_15px_rgba(0,255,231,0.2)]'
+                    : 'bg-[#050608] border-white/5 hover:border-[#FC5185]/50 hover:bg-white/5'
                     }`}
                 >
                   {/* Top Bar of button */}

@@ -4,53 +4,64 @@ import { Brain, Cpu, Database, Binary, Target, BotMessageSquare, Github, Externa
 
 const projects = [
   {
-    id: "EXP-01",
+    id: "EXP-ATX",
     status: "STABLE",
     icon: Brain,
-    title: "AI Neural Net from Scratch",
-    desc: "Built a mini neural network in JS to understand the math behind AI. No libraries, just pure code.",
-    tech: ["JavaScript", "Math", "AI", "Numpy"],
-    metrics: "Acc: 94.2% // Latency: 12ms",
-    link: "#",
-    github: "#",
-    // Added Tech/Abstract placeholder images
-    img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: "EXP-02",
-    status: "ACTIVE",
-    icon: Cpu,
-    title: "Real-Time Sensor Dashboard",
-    desc: "Streaming IoT sensor data using WebSockets, node.js, and D3.js visualization.",
-    tech: ["WebSockets", "D3.js", "Node.js", "IoT"],
-    metrics: "15.2k packets/sec",
-    link: "#",
-    github: "#",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: "EXP-03",
-    status: "VOLATILE",
-    icon: Binary,
-    title: "Quantum Simulation",
-    desc: "Exploring quantum entanglement concepts with a Qiskit-powered Python simulator.",
-    tech: ["Python", "Qiskit", "Quantum", "Math"],
-    metrics: "Qubits: 8 // State: Entangled",
+    title: "Ataraxia ~ Cognitive Aesthetic Engine",
+    desc: "A controlled environment for visual stillness. Ataraxia is not a wallpaper app—it is a psychological interface engineered to induce calm through curated visual entropy, philosophical injections, and time-aware aesthetic shifts.",
+    tech: ["Flutter", "Dynamic UI", "State Engine", "Design Systems"],
+    metrics: "Users: Growing // Sessions: Deep",
     link: "#",
     github: "#",
     img: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800&auto=format&fit=crop"
   },
   {
-    id: "EXP-04",
+    id: "EXP-TVX",
     status: "LEARNING",
-    icon: BotMessageSquare,
-    title: "Mech Psychology Decoder",
-    desc: "An AI agent trained on YouTube transcripts to provide lab discoveries. Powered by Gemini.",
-    tech: ["Gemini AI", "React", "NLP", "API"],
-    metrics: "Tokens: 8.5M // Mood: Witty",
+    icon: Database,
+    title: "TheoryVerse ~ Narrative Simulation Network",
+    desc: "A speculative intelligence system disguised as a fandom platform. Users construct alternate timelines, vote on narrative plausibility, and simulate unrealized story branches across films and series.",
+    tech: ["Flutter", "Realtime DB", "Voting Systems", "Community Graph"],
+    metrics: "Theories: Evolving // Reality: Optional",
+    link: "#",
+    github: "#",
+    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "EXP-LGX",
+    status: "VOLATILE",
+    icon: BotMessageSquare, //Binary
+    title: "MadMiner ~ Autonomous Resource Entity",
+    desc: "A behavioral automation construct that eliminates repetitive human interaction loops. Lootgeist observes, decides, and executes resource collection cycles with zero emotional fatigue.",
+    tech: ["Python", "Automation", "Scripting", "Game Logic"],
+    metrics: "Human Input: 0 // Efficiency: Relentless",
+    link: "#",
+    github: "#",
+    img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "EXP-BKM",
+    status: "STABLE",
+    icon: Target,
+    title: "BunkMate ~ Academic Survival Engine",
+    desc: "Transforms raw attendance data into actionable survival strategy. Predicts absence thresholds, optimizes leave decisions, and maps academic risk with precision-grade analytics.",
+    tech: ["Flutter", "Data Modeling", "Predictive Logic", "Charts"],
+    metrics: "Decisions Saved: Countless // Panic Reduced: High",
     link: "#",
     github: "#",
     img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "EXP-CAC",
+    status: "ACTIVE",
+    icon: Cpu,
+    title: "ChaiAurChhat ~ Ground Truth Housing Network",
+    desc: "A decentralized trust layer for student housing. Converts scattered, unreliable hostel information into verified, experience-driven intelligence through raw user input.",
+    tech: ["Flutter", "User Systems", "Review Engine", "Geo Data"],
+    metrics: "Trust Score: Climbing // Noise: Filtering",
+    link: "#",
+    github: "#",
+    img: "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=800&auto=format&fit=crop"
   }
 ];
 

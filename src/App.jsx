@@ -6,6 +6,9 @@ import HackerChat from './components/HackerChat';
 import FeaturedVideo from './components/FeaturedVideo';
 import SynapseGrid from './components/SynapseGrid';
 import LabGear from './components/LabGear';
+import AboutCore from './components/AboutCore';
+import FloatingSocials from './components/FloatingSocials';
+import TimePortal from './components/TimePortal';
 import { Github, Youtube, Instagram, Terminal, Network } from 'lucide-react';
 
 // Drop this right above function App() { ... }
@@ -41,6 +44,7 @@ function App() {
   const [isGlitched, setIsGlitched] = useState(false);
   const [typedText, setTypedText] = useState('');
   const featuredRef = useRef(null);
+  const footerRef = useRef(null);
 
   const fullText = "Initialize intellectual_rebellion.sh... Architecture of chaos detected. Proceed with caution.";
 
@@ -82,6 +86,9 @@ function App() {
 
       {/* 🟢 THE NEW MATRIX RAIN (Only renders during the 800ms glitch) */}
       {isGlitched && <GlitchRain />}
+
+      <FloatingSocials footerRef={footerRef} isGlitched={isGlitched} />
+      <TimePortal triggerGlobalGlitch={() => setIsGlitched(true)} />
 
       {/* 🚀 CRITICAL OVERHAUL: THE NEON TERMINAL HERO */}
       <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 pt-20">
@@ -154,6 +161,11 @@ function App() {
         </div>
       </section>
 
+      {/* 🧠 NEW: THE NEURAL CORE (ABOUT US) */}
+      <div className="relative z-10 bg-[#050608]">
+        <AboutCore />
+      </div>
+
       {/* NEW: Decrypted Transmission (Featured Video) */}
       <div ref={featuredRef} className="relative z-10 bg-[#0a0c10] border-t border-white/10">
         <FeaturedVideo />
@@ -187,7 +199,7 @@ function App() {
       </div>
 
       {/* 🏁 FOOTER: SECURE UPLINKS */}
-      <footer className="relative z-10 bg-[#050608] border-t border-[#FC5185]/20 pt-16 pb-8 overflow-hidden">
+      <footer ref={footerRef} className="relative z-10 bg-[#050608] border-t border-[#FC5185]/20 pt-16 pb-8 overflow-hidden">
         {/* Background Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,231,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,231,0.02)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
 
